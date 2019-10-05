@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="https://kit.fontawesome.com/231ea090a5.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://api-maps.yandex.ru/2.1/?apikey=<ваш API-ключ>&lang=ru_RU"
+      type="text/javascript"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Тышковичи-Агро</title>
+  </head>
+  <body>
+    <div class="img-container img-fluid"></div>
+
+    <nav>
+      <div class="navbar navbar-expand-md navbar-light bg-light">
+        <a href="index.html" class="text-decoration-none text-dark navbar-brand"
+          >Тышковичи-Агро <i class="fas fa-tractor"></i>
+        </a>
+        <button
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item px-2">
+              <a href="index.html" class="nav-link">Главная</a>
+            </li>
+            <li class="nav-item px-2">
+              <a href="production.html" class="nav-link">Продукция</a>
+            </li>
+            <li class="nav-item px-2">
+              <a href="contacts.html" class="nav-link active">Контакты</a>
+            </li>
+            <li class="nav-item px-2">
+              <a href="agrogorodok.html" class="nav-link"
+                >Агрогородок Тышковичи</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="contacts">
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5>Директор</h5>
+                <p>
+                  Малич Александр Сергеевич
+                </p>
+                <p>
+                  <cite class="text-muted">Телефон:</cite> +375 (29) 38-04-14
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5>Главный бухгалтер</h5>
+                <p>
+                  Ремко Инна Ивановна
+                </p>
+                <p>
+                  <cite class="text-muted">Телефон:</cite> +375 (1652) 5-22-41
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h5>Главный агроном</h5>
+                <p>
+                  Бебко Михаил Константинович
+                </p>
+                <p>
+                  <cite class="text-muted">Телефон:</cite> +375 (29) 380-44-17
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <h5 class="mt-4 border-left border-primary pl-3">
+          ОАО "Тышковичи-Агро"
+        </h5>
+        <div
+          class="row text-center mt-5 bg-light p-4 rounded justify-text-center"
+        >
+          <div
+            class="col-md-4 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="mb-2">
+              <i class="fas fa-file-alt fa-2x text-primary"></i>
+            </div>
+            <p class="lead">УНП: 200076180</p>
+          </div>
+          <div
+            class="col-md-4 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="mb-2">
+              <i class="fas fa-envelope-open-text text-primary fa-2x"></i>
+            </div>
+            <p class="lead">oao.tyshkovichiagro@mail.ru</p>
+          </div>
+          <div
+            class="col-md-4 d-flex flex-column justify-content-center align-items-center"
+          >
+            <div class="mb-2">
+              <i class="fas fa-phone text-primary fa-2x"></i>
+            </div>
+            <p class="lead">+375 (1652) 5-21-73</p>
+            <p class="lead">+375 (1652) 5-21-80</p>
+          </div>
+        </div>
+
+        <div class="card text-center my-5 mx-auto" style="max-width: 600px;">
+          <div class="card-header">
+            <h5>
+              Беларусь, Брестская обл., Ивановский р-н, агр. Тышковичи, Улица
+              Объездная, 24.
+            </h5>
+            <h5>Почтовый индекс 225797</h5>
+          </div>
+          <div id="map" style="width: 100%; height: 400px"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="text-center py-2 bg-dark text-light">
+        <p class="lead">
+          &copy; "ОАО Тышковичи-Агро", 2019
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      ymaps.ready(init);
+      function init() {
+        var myMap = new ymaps.Map(
+            'map',
+            {
+              center: [52.346895, 25.626914],
+              zoom: 17
+            },
+            {
+              searchControlProvider: 'yandex#search'
+            }
+          ),
+          // Создаем геообъект с типом геометрии "Точка".
+          myGeoObject = new ymaps.GeoObject(
+            {
+              // Описание геометрии.
+              geometry: {
+                type: 'Point',
+                coordinates: [52.346895, 25.626914]
+              },
+              // Свойства.
+              properties: {
+                // Контент метки.
+                iconContent: '',
+                hintContent: ''
+              }
+            },
+            {
+              // Опции.
+              // Иконка метки будет растягиваться под размер ее содержимого.
+              preset: 'islands#blackStretchyIcon',
+              // Метку можно перемещать.
+              draggable: true
+            }
+          ),
+          myPieChart = new ymaps.Placemark(
+            [55.847, 37.6],
+            {
+              // Данные для построения диаграммы.
+              data: [
+                { weight: 8, color: '#0E4779' },
+                { weight: 6, color: '#1E98FF' },
+                { weight: 4, color: '#82CDFF' }
+              ],
+              iconCaption: 'Диаграмма'
+            },
+            {
+              // Зададим произвольный макет метки.
+              iconLayout: 'default#pieChart',
+              // Радиус диаграммы в пикселях.
+              iconPieChartRadius: 30,
+              // Радиус центральной части макета.
+              iconPieChartCoreRadius: 10,
+              // Стиль заливки центральной части.
+              iconPieChartCoreFillStyle: '#ffffff',
+              // Cтиль линий-разделителей секторов и внешней обводки диаграммы.
+              iconPieChartStrokeStyle: '#ffffff',
+              // Ширина линий-разделителей секторов и внешней обводки диаграммы.
+              iconPieChartStrokeWidth: 3,
+              // Максимальная ширина подписи метки.
+              iconPieChartCaptionMaxWidth: 200
+            }
+          );
+
+        myMap.geoObjects.add(myGeoObject);
+      }
+    </script>
+  </body>
+</html>
